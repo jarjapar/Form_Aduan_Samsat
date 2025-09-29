@@ -13,6 +13,7 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'samsat' => ['base' => env('API_BASE')],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

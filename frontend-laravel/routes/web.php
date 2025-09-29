@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Services\ApiClient;
+
+
+Route::get('/test-stats', function (ApiClient $api) {
+    return $api->get('stats'); // harus balikin JSON stats dari backend
+});
 
 Route::get('/', function () {
     return view('welcome');
