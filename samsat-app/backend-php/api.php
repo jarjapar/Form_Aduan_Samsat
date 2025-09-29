@@ -1,6 +1,16 @@
 <?php
 declare(strict_types=1);
 
+// taruh paling atas file api.php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Methods: GET,POST,PUT,DELETE,OPTIONS');
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') { http_response_code(204); exit; }
+
+// ganti lokasi DB & uploads
+const DB_FILE    = __DIR__ . '/db/db.sqlite';   // bukan /db.sqlite lagi
+const UPLOAD_DIR = __DIR__ . '/uploads';
+
 // ====== CONFIG ======
 const DB_FILE = __DIR__ . '/db.sqlite';
 const UPLOAD_DIR = __DIR__ . '/uploads';
